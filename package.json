@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "npm run build:generated-client && npm run build:sdk",
-    "build:generated-client": "openapi-generator-cli generate",
+    "build:generated-client": "openapi-ts",
     "build:sdk": "rollup -c",
     "clean:build:sdk": "rimraf lib && rollup -c",
     "docs": "typedoc --tsconfig .",
@@ -26,7 +26,8 @@
     "test:integration": "vitest integration"
   },
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "2.18.4",
+    "@hey-api/openapi-ts": "0.66.5",
+    "@hey-api/client-axios": "0.7.0",
     "@rollup/plugin-typescript": "12.1.2",
     "@stylistic/eslint-plugin": "2.12.1",
     "@tsconfig/recommended": "1.0.8",
