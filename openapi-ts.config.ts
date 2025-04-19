@@ -18,15 +18,19 @@ export default defineConfig({
 			name: '@hey-api/typescript',
 			// Prevents enums from being generated as types
 			enums: 'typescript',
-			// By default all enum valuesa are screaming snake case
-			enumsCase: 'PascalCase'
+			// By default all enum values are screaming snake case
+			enumsCase: 'PascalCase',
+			// Prevents types from being split into read-only and write-only variants.
+			// Not sure how much of an advantage this is, but setting this makes the output closer
+			// to the original
+			readOnlyWriteOnlyBehavior: 'off'
 		},
 		{
 			name: '@hey-api/sdk',
 			// Groups related methods into classes. Does NOT support tree shaking.
 			// Only doing this now to make the output SDK more closely match the openapi-generator code.
 			asClass: true,
-			// Aligns class names to match class names in current SDK.
+			// Aligns class names to match class names in current SDK
 			serviceNameBuilder: '{{name}}Api'
 		}
 	]
